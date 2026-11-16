@@ -6,7 +6,7 @@ export const overlay: Feature = {
   fileName: "덮어씌우는 설명",
   title: "설명 덮어씌우기",
   description:
-    "마우스를 올리면 숨겨둔 설명이 카드 위에 덮어씌워져요. 덮개를 position: absolute로 카드에 꽉 채우고 opacity를 0에서 1로 바꿔요.",
+    "마우스를 올리면 숨겨둔 설명이 카드 위에 덮어씌워져요.",
   component: Overlay,
   code: {
     html: `<div class="card">

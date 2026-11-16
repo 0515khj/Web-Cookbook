@@ -6,7 +6,7 @@ export const shine: Feature = {
   fileName: "반짝이는 카드",
   title: "카드 반짝이기",
   description:
-    "마우스를 올리면 빛줄기가 카드를 가로질러 지나가요. 투명 → 흰색 → 투명 그라데이션 띠를 ::after로 만들어 카드 밖(왼쪽)에 두고, hover 시 오른쪽 밖으로 이동시켜요. overflow: hidden으로 밖은 가려요.",
+    "마우스를 올리면 빛줄기가 카드를 가로질러 지나가요.",
   component: Shine,
   code: {
     html: `<div class="card">

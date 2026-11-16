@@ -6,7 +6,7 @@ export const fillUp: Feature = {
   fileName: "차오르는 배경",
   title: "배경 차오르기",
   description:
-    "마우스를 올리면 배경색이 아래에서 위로 차올라요. ::before 가상 요소의 height를 0에서 100%로 바꾸고, 글자는 z-index로 위에 올려요.",
+    "마우스를 올리면 배경색이 아래에서 위로 차올라요.",
   component: FillUp,
   code: {
     html: `<div class="card">

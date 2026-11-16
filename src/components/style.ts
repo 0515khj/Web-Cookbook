@@ -79,6 +79,7 @@ export const SidebarWrap = styled.aside`
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
+    cursor: pointer;
   }
 
   .sidebarFolder {

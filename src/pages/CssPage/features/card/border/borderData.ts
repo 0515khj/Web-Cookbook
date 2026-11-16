@@ -6,7 +6,7 @@ export const borderData: Feature = {
   fileName: "테두리 색 변경",
   title: "테두리 색 변경",
   description:
-    "마우스를 올리면 테두리 색이 바뀌는 효과예요. border-color만 transition으로 연결하면 돼요.",
+    "마우스를 올리면 테두리 색이 바뀌는 효과예요.",
   component: Border,
   code: {
     html: `<div class="card">

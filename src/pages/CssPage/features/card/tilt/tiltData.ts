@@ -6,7 +6,7 @@ export const tilt: Feature = {
   fileName: "기울어지는 카드",
   title: "카드 기울이기",
   description:
-    "마우스를 올리면 카드가 3D로 살짝 기울어져요. 부모에 perspective를 주고, 카드에 rotateX와 rotateY를 적용하면 원근감이 생겨요.",
+    "마우스를 올리면 카드가 3D로 살짝 기울어져요.",
   component: Tilt,
   code: {
     html: `<div class="scene">

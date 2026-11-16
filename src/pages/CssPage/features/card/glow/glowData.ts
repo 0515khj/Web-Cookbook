@@ -6,7 +6,7 @@ export const glow: Feature = {
   fileName: "빛나는 카드",
   title: "빛나는 카드",
   description:
-    "마우스를 올리면 테두리와 함께 빛이 번지는 효과예요. blur가 크고 offset이 0인 box-shadow가 핵심이에요.",
+    "마우스를 올리면 테두리와 함께 빛이 번지는 효과예요.",
   component: Glow,
   code: {
     html: `<div class="card">

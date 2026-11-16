@@ -6,7 +6,7 @@ export const blurFocus: Feature = {
   fileName: "블러 효과",
   title: "카드 블러효과",
   description:
-    "카드 하나에 마우스를 올리면 나머지 카드가 흐려지고 그 카드만 선명해요. 부모에 hover 했을 때 :not(:hover)로 호버되지 않은 카드만 골라 filter: blur를 줘요.",
+    "카드 하나에 마우스를 올리면 나머지 카드가 흐려지고 그 카드만 선명해요.",
   component: BlurFocus,
   code: {
     html: `<div class="list">

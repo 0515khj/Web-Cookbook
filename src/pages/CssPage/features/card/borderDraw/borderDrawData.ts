@@ -6,7 +6,7 @@ export const borderDraw: Feature = {
   fileName: "그려지는 테두리",
   title: "테두리 그리기",
   description:
-    "마우스를 올리면 테두리가 선처럼 그려져요. ::before와 ::after 두 개의 가상 요소를 0 크기에서 100%로 키우고, 가로 → 세로 순서로 transition 지연(delay)을 줘서 그려지는 느낌을 만들어요.",
+    "마우스를 올리면 테두리가 선처럼 그려져요.",
   component: BorderDraw,
   code: {
     html: `<div class="card">

@@ -6,7 +6,7 @@ export const shadow: Feature = {
   fileName: "그림자 생기기",
   title: "그림자 생기기",
   description:
-    "마우스를 올리면 그림자가 생기는 효과예요. box-shadow를 transition으로 연결하면 부드럽게 나타나요.",
+    "마우스를 올리면 그림자가 생기는 효과예요.",
   component: Shadow,
   code: {
     html: `<div class="card">

@@ -6,7 +6,7 @@ export const lift: Feature = {
   fileName: "떠오르는 효과",
   title: "떠오르는 효과",
   description:
-    "마우스를 올리면 카드가 위로 떠오르는 효과예요. transform과 transition만 사용하고 JavaScript는 쓰지 않아요.",
+    "마우스를 올리면 카드가 위로 떠오르는 효과예요.",
   component: HoverCard,
   code: {
     html: `<div class="card">

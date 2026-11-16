@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const roots = [
   { name: "css", label: "CSS", icon: "#", groups: cssGroups },
-  { name: "JS", label: "JS", icon: "JS", groups: jsGroups },
+  { name: "js", label: "JS", icon: "JS", groups: jsGroups },
 ];
 
 const Sidebar = () => {
@@ -23,10 +23,15 @@ const Sidebar = () => {
     navigate(`/${rootName}/${groupId}`);
   };
 
+  const goHome = () => {
+  setOpenKey([]);
+  navigate("/");
+};
+
   return (
     <SidebarWrap className="sidebar">
       <div className="sidebarHeader">EXPLORER</div>
-      <div className="sidebarProject">▾ Web-Cookbook</div>
+      <div className="sidebarProject" onClick={goHome}>▾ Web-Cookbook - (Home)</div>
 
       {roots.map((root) => {
         const isOpen = openKey.includes(root.name);

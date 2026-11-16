@@ -13,7 +13,7 @@ const MainPageIndex = () => {
 
       <div className="mainLinks">
         <Link to="/css" className="mainLink"># CSS 기능 보기</Link>
-        <Link to="/js" className="mainLink">JS JS 기능 보기</Link>
+        <Link to="/js" className="mainLink"># JS 기능 보기</Link>
       </div>
     </MainWrap>
     );

@@ -6,7 +6,7 @@ export const scale: Feature = {
   fileName: "커지는 카드",
   title: "커지는 카드",
   description:
-    "마우스를 올리면 카드가 1.1배로 커지는 효과예요. transform: scale을 transition으로 부드럽게 연결했어요.",
+    "마우스를 올리면 카드가 1.1배로 커지는 효과예요.",
   component: Scale,
   code: {
     html: `<div class="card">

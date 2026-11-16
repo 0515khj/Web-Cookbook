@@ -1,6 +1,7 @@
 import { HeaderWrap } from './style';
 
 const TitleBar = () => {
+    
     return (
         <HeaderWrap className='titleBar'>
             <span className='titleText'>
