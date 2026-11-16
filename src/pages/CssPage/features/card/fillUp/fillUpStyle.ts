@@ -38,7 +38,7 @@ export const FillUpWrap = styled.div`
 
     .fillUpDesc {
       margin-top: 8px;
-      color: var(--text-white);
+      color:#858585
     }
   }
 `;
