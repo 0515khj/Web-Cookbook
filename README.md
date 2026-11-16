@@ -1,75 +1,39 @@
-# React + TypeScript + Vite
+# 🍳 Web Cookbook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HTML, CSS, JS로 만든 기능 레시피 모음집입니다.
+React + TypeScript를 공부하며 만들었고, VS Code 화면처럼 꾸며서 예시와 코드를 함께 볼 수 있어요.
 
-Currently, two official plugins are available:
+🔗 **배포 주소**: https://web-cookbook.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 소개
 
-## React Compiler
+- 기능 하나를 누르면 **예시 화면 / 설명 / 코드(HTML · CSS · JS)** 를 한 번에 볼 수 있어요.
+- 코드 탭은 React와 상관없이 **순수 HTML, CSS, JS**로 적었어요. 복붙하면 그대로 동작해요.
+- 기능은 두 종류로 나눴어요.
+  - **CSS**: HTML + CSS만 사용한 기능
+  - **JS**: HTML + CSS + JS까지 사용한 기능
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ 기능 목록
 
-## Expanding the ESLint configuration
+### CSS
+| 그룹 | 기능 |
+|---|---|
+| card | lift, scale, border, shadow, glow, flip, fillUp, tilt, overlay, borderDraw, shine, blurFocus |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### JS
+| 그룹 | 기능 |
+|---|---|
+| click | counter, toggle, likeButton |
+| list | todoList, searchFilter |
+| ui | modal, tabs, accordion |
+| timer | stopwatch, countdown |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> 기능은 계속 추가할 예정입니다.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠 기술 스택
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+- **React 19** / **TypeScript**
+- **Vite**
+- **React Router** (3단계 라우팅: 그룹 → 기능 목록 → 상세)
+- **styled-components**
+- **react-icons**
