@@ -4,8 +4,8 @@ const Border = () => {
   return (
     <BorderWrap>
       <div className="borderCard">
-        <h3 className="borderTitle">Hover me</h3>
-        <p className="borderDesc">마우스를 올리면 테두리 색이 바뀌어요</p>
+        <h3 className="borderTitle">마우스를 올려주세요.</h3>
+        <p className="borderDesc">테두리 색이 바뀌어요</p>
       </div>
     </BorderWrap>
   );

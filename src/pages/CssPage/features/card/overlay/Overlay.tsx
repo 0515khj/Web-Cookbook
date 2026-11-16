@@ -4,7 +4,7 @@ const Overlay = () => {
   return (
     <OverlayWrap className="overlay">
       <div className="overlayCard">
-        <h3 className="overlayTitle">Hover me</h3>
+        <h3 className="overlayTitle">마우스를 올려주세요.</h3>
         <div className="overlayCover">숨겨둔 설명이 덮어씌워져요</div>
       </div>
     </OverlayWrap>

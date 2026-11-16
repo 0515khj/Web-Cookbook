@@ -4,8 +4,8 @@ const Scale = () => {
   return (
     <ScaleWrap>
       <div className="scaleCard">
-        <h3 className="scaleTitle">Hover me</h3>
-        <p className="scaleDesc">마우스를 올리면 카드가 커져요</p>
+        <h3 className="scaleTitle">마우스를 올려주세요.</h3>
+        <p className="scaleDesc">카드가 커져요</p>
       </div>
     </ScaleWrap>
   );

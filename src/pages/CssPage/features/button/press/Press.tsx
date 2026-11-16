@@ -3,7 +3,7 @@ import { PressWrap } from "./pressStyle";
 const Press = () => {
   return (
     <PressWrap className="press">
-      <button className="pressButton">Click me</button>
+      <button className="pressButton">클릭 해주세요.</button>
     </PressWrap>
   );
 };
