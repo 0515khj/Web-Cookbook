@@ -16,7 +16,7 @@ const ActivityBar = () => {
             {icons.map(({id,Icon}, i)=>(
                 <span key={id} className={i === 0 ? "activityIcon active" : "activityIcon"}>
                     <Icon/>
-                </span> 
+                </span>
             ))}
         </ActivityWrap>
     );

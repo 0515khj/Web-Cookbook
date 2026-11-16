@@ -5,6 +5,6 @@ import { likeButton } from "./likeButton/likeButtonData";
 
 export const clickGroup: FeatureGroup = {
   id: "click",
-  name: "click",
+  name: "Click",
   features: [counter, toggle, likeButton],
 };

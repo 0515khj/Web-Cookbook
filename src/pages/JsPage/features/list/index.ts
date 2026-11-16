@@ -4,6 +4,6 @@ import { searchFilter } from "./searchFilter/searchFilterData";
 
 export const listGroup: FeatureGroup = {
   id: "list",
-  name: "list",
+  name: "List",
   features: [todoList, searchFilter],
 };

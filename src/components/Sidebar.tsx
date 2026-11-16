@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const roots = [
   { name: "css", label: "CSS", icon: "#", groups: cssGroups },
-  { name: "js", label: "JS", icon: "JS", groups: jsGroups },
+  { name: "JS", label: "JS", icon: "JS", groups: jsGroups },
 ];
 
 const Sidebar = () => {

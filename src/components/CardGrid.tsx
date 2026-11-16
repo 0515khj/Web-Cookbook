@@ -5,15 +5,15 @@ interface CardData {
     id: string;
     title: string;
     sub?: string;
+    path: string;
 }
 
 interface Props {
     title: string;
     items: CardData[];
-    basePath: string;
 }
 
-const CardGrid = ({ title, items, basePath }: Props) => {
+const CardGrid = ({ title, items }: Props) => {
     const navigate = useNavigate();
 
     return (
@@ -22,9 +22,9 @@ const CardGrid = ({ title, items, basePath }: Props) => {
             <div className="gridList">
                 {items.map((item) => (
                     <button
-                        key={item.id}
+                        key={item.path}
                         className="gridItem"
-                        onClick={() => navigate(`${basePath}/${item.id}`)}>
+                        onClick={() => navigate(item.path)}>
                         <span className="gridItemName">{item.title}</span>
                         {item.sub && <span className="gridItemSub">{item.sub}</span>}
                     </button>

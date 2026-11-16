@@ -14,6 +14,6 @@ import { tilt } from "./tilt/tiltData";
 
 export const cardGroup: FeatureGroup = {
     id:"card",
-    name:"card",
+    name:"Card",
     features: [lift, scale,borderData,shadow,glow,flip,fillUp,tilt,overlay,borderDraw,shine,blurFocus],
 }

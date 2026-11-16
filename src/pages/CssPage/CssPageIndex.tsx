@@ -8,34 +8,36 @@ const CssPageIndex = () => {
     const group = cssGroups.find((g) => g.id === groupId)
     const feature = group?.features.find((f) => f.id === featureId);
     
-     // 1단계: /css → 그룹 카드들
-  if (!group) {
-    return (
-      <CardGrid
-        title="css"
-        basePath="/css"
-        items={cssGroups.map((g) => ({
-          id: g.id,
-          title: g.name,
-          sub: `${g.features.length}가지 기능`,
-        }))}
-      />
-    );
-  }
-
-  // 2단계: /css/hover → 기능 카드들
-  if (!feature) {
-    return (
-      <CardGrid
-        title={`css / ${group.name}`}
-        basePath={`/css/${group.id}`}
-        items={group.features.map((f) => ({
+  // 1단계: /css
+if (!group) {
+  return (
+    <CardGrid
+      title="CSS"
+      items={cssGroups.flatMap((g) =>
+        g.features.map((f) => ({
           id: f.id,
           title: f.title,
-        }))}
-      />
-    );
-  }
+          sub: g.name,
+          path: `/css/${g.id}/${f.id}`,
+        }))
+      )}
+    />
+  );
+}
+
+// 2단계: /css/card
+if (!feature) {
+  return (
+    <CardGrid
+      title={`CSS / ${group.name}`}
+      items={group.features.map((f) => ({
+        id: f.id,
+        title: f.title,
+        path: `/css/${group.id}/${f.id}`,
+      }))}
+    />
+  );
+}
 
   // 3단계: /css/hover/lift → 상세
   return <Preview key={`${group.id}/${feature.id}`} feature={feature} />;

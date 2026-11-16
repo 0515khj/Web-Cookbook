@@ -4,6 +4,6 @@ import { countdown } from "./countdown/countdownData";
 
 export const timerGroup: FeatureGroup = {
   id: "timer",
-  name: "timer",
+  name: "Timer",
   features: [stopwatch, countdown],
 };

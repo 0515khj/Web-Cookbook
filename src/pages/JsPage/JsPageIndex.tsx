@@ -8,30 +8,32 @@ const JsPageIndex = () => {
   const group = jsGroups.find((g) => g.id === groupId);
   const feature = group?.features.find((f) => f.id === featureId);
 
-  // 1단계: /js → 그룹 카드들
+  // 1단계: /js → 모든 기능 카드
   if (!group) {
     return (
       <CardGrid
-        title="js"
-        basePath="/js"
-        items={jsGroups.map((g) => ({
-          id: g.id,
-          title: g.name,
-          sub: `${g.features.length}개의 기능`,
-        }))}
+        title="JS"
+        items={jsGroups.flatMap((g) =>
+          g.features.map((f) => ({
+            id: f.id,
+            title: f.title,
+            sub: g.name, // 어느 그룹 기능인지 작게 표시
+            path: `/js/${g.id}/${f.id}`,
+          }))
+        )}
       />
     );
   }
 
-  // 2단계: /js/click → 기능 카드들
+  // 2단계: /js/click → 해당 그룹 기능 카드
   if (!feature) {
     return (
       <CardGrid
-        title={`js / ${group.name}`}
-        basePath={`/js/${group.id}`}
+        title={`JS / ${group.name}`}
         items={group.features.map((f) => ({
           id: f.id,
           title: f.title,
+          path: `/js/${group.id}/${f.id}`,
         }))}
       />
     );

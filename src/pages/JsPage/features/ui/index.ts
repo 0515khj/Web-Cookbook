@@ -5,6 +5,6 @@ import { accordion } from "./accordion/accordionData";
 
 export const uiGroup: FeatureGroup = {
   id: "ui",
-  name: "ui",
+  name: "Ui",
   features: [modal, tabs, accordion],
 };
