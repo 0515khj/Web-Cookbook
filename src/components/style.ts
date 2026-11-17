@@ -78,7 +78,6 @@ export const SidebarWrap = styled.aside`
     padding: 4px 8px;
     font-size: 11px;
     font-weight: 700;
-    text-transform: uppercase;
     cursor: pointer;
   }
 
@@ -187,13 +186,6 @@ export const GridWrap = styled.section`
   overflow-y: auto;
   padding: 24px 32px;
 
-  .gridTitle {
-    margin-bottom: 20px;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--text-white);
-  }
-
   .gridList {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -243,6 +235,8 @@ export const GridWrap = styled.section`
     font-size: 12px;
     color: var(--text-dim);
   }
+
+  .gridSentinel { height:1px;}
 `;
 
 /* Preview */

@@ -25,7 +25,7 @@ const Sidebar = () => {
 
   return (
     <SidebarWrap className="sidebar">
-      <div className="sidebarHeader">EXPLORER</div>
+      <div className="sidebarHeader">Explorer</div>
       <div className="sidebarProject" onClick={goHome}>▾ Web-Cookbook - (Home)</div>
 
       {roots.map((root) => {

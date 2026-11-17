@@ -1,4 +1,4 @@
-import type { ComponentType } from "react";
+import { useEffect, useRef, type ComponentType, useState } from "react";
 import { GridWrap } from "./style";
 import { Link } from "react-router-dom";
 
@@ -16,16 +16,34 @@ interface Props {
     hoverDemo?:boolean;
 }
 
-const CardGrid = ({ title, items, hoverDemo = false }: Props) => {
+const page_item = 9;
+
+const CardGrid = ({ items, hoverDemo = false }: Props) => {
+    const [count, setCount] = useState(page_item);
+    const wrapRef = useRef<HTMLElement>(null);
+    const sentinelRef = useRef<HTMLDivElement>(null);
+    const hasMore = count < items.length;
+
+    useEffect(()=>{
+        if(!hasMore || !sentinelRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if(entry.isIntersecting) setCount((c)=> c + page_item);
+            },
+            {root:wrapRef.current, rootMargin: "200px"}
+        );
+        observer.observe(sentinelRef.current);
+        return () => observer.disconnect();
+    },[count, hasMore])
 
     return (
-        <GridWrap className="cardGrid">
-            <h2 className="gridTitle">{title}</h2>
+        <GridWrap ref={wrapRef} className="cardGrid">
             <div className="gridList">
-                {items.map(({path, title: itemTitle, Demo}) => (
+                {items.slice(0, count).map(({path, title: itemTitle, Demo}) => (
                    <Link key={path} to={path} className="gridItem">
                     {Demo && (
-                        <div className={hoverDemo ? "gridItemDemo" : "gridItemDemo"} inert={!hoverDemo}>
+                        <div className={hoverDemo ? "gridItemDemo" : "gridItemDemo locked"} inert={!hoverDemo}>
                             <Demo/>
                         </div>
                     )}
@@ -33,6 +51,7 @@ const CardGrid = ({ title, items, hoverDemo = false }: Props) => {
                    </Link>
                 ))}
             </div>
+            {hasMore && <div ref={sentinelRef} className="gridSentinel"/> }
         </GridWrap>
     );
 };
