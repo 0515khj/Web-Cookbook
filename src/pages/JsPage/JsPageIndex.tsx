@@ -9,7 +9,7 @@ const JsPageIndex = () => {
   const feature = group?.features.find((f) => f.id === featureId);
 
   // 1단계: /js → 모든 기능 카드
-  if (!group) {
+  if (!feature) {
     return (
       <CardGrid
         title="JS"
@@ -26,23 +26,8 @@ const JsPageIndex = () => {
     );
   }
 
-  // 2단계: /js/click → 해당 그룹 기능 카드
-  if (!feature) {
-    return (
-      <CardGrid
-        title={`JS / ${group.name}`}
-        items={group.features.map((f) => ({
-          id: f.id,
-          title: f.title,
-          path: `/js/${group.id}/${f.id}`,
-          Demo: f.component,
-        }))}
-      />
-    );
-  }
-
   // 3단계: /js/click/counter → 상세
-  return <Preview key={`${group.id}/${feature.id}`} feature={feature} />;
+  return <Preview key={`${group!.id}/${feature.id}`} feature={feature} />;
 };
 
 export default JsPageIndex;

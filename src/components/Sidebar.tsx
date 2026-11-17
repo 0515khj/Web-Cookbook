@@ -18,11 +18,6 @@ const Sidebar = () => {
     navigate(`/${name}`);
   };
 
-  const openGroup = (rootName: string, groupId: string) => {
-    setOpenKey([rootName, `${rootName}/${groupId}`]);
-    navigate(`/${rootName}/${groupId}`);
-  };
-
   const goHome = () => {
   setOpenKey([]);
   navigate("/");
@@ -42,42 +37,25 @@ const Sidebar = () => {
               <span>{isOpen ? "▾" : "▸"}</span>
               {root.label}
             </div>
-
-            {isOpen &&
-              root.groups.map((group) => {
-                const groupKey = `${root.name}/${group.id}`;
-                const groupOpen = openKey.includes(groupKey);
-
-                return (
-                  <div key={groupKey}>
-                    <div
-                      className="sidebarGroup"
-                      onClick={() => openGroup(root.name, group.id)}
-                    >
-                      <span>{groupOpen ? "▾" : "▸"}</span>
-                      {group.name}
-                    </div>
-
-                    {groupOpen && (
-                      <ul className="sidebarFileList">
-                        {group.features.map((f) => (
-                          <li key={f.id}>
-                            <NavLink
-                              to={`/${root.name}/${group.id}/${f.id}`}
-                              className={({ isActive }) =>
-                                isActive ? "sidebarFile active" : "sidebarFile"
-                              }
-                            >
-                              <span className="sidebarFileIcon">{root.icon}</span>
-                              {f.fileName}
-                            </NavLink>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                );
-              })}
+            {isOpen && (
+              <ul className="sidebarFileList">
+                {root.groups.flatMap((group) =>
+                  group.features.map((f) => (
+                    <li key={`${group.id}/${f.id}`}>
+                      <NavLink
+                        to={`/${root.name}/${group.id}/${f.id}`}
+                        className={({ isActive }) =>
+                          isActive ? "sidebarFile active" : "sidebarFile"
+                        }
+                      >
+                        <span className="sidebarFileIcon">{root.icon}</span>
+                        {f.fileName}
+                      </NavLink>
+                    </li>
+                  ))
+                )}
+              </ul>
+            )}
           </div>
         );
       })}

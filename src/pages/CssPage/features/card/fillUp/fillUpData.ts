@@ -40,5 +40,5 @@ export const fillUp: Feature = {
   position: relative;
   z-index: 1;
 }`,
-  },
+  }, 
 };

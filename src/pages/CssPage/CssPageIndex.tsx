@@ -9,7 +9,7 @@ const CssPageIndex = () => {
     const feature = group?.features.find((f) => f.id === featureId);
     
   // 1단계: /css
-if (!group) {
+if (!feature) {
   return (
     <CardGrid
       title="CSS"
@@ -27,24 +27,8 @@ if (!group) {
   );
 }
 
-// 2단계: /css/card
-if (!feature) {
-  return (
-    <CardGrid
-      title={`CSS / ${group.name}`}
-      hoverDemo
-      items={group.features.map((f) => ({
-        id: f.id,
-        title: f.title,
-        path: `/css/${group.id}/${f.id}`,
-        Demo: f.component,
-      }))}
-    />
-  );
-}
-
   // 3단계: /css/hover/lift → 상세
-  return <Preview key={`${group.id}/${feature.id}`} feature={feature} />;
+  return <Preview key={`${group!.id}/${feature.id}`} feature={feature} />;
 };
 
 export default CssPageIndex;

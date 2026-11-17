@@ -22,7 +22,7 @@ const CardGrid = ({ title, items, hoverDemo = false }: Props) => {
         <GridWrap className="cardGrid">
             <h2 className="gridTitle">{title}</h2>
             <div className="gridList">
-                {items.map(({path, title: itemTitle, sub, Demo}) => (
+                {items.map(({path, title: itemTitle, Demo}) => (
                    <Link key={path} to={path} className="gridItem">
                     {Demo && (
                         <div className={hoverDemo ? "gridItemDemo" : "gridItemDemo"} inert={!hoverDemo}>
@@ -30,7 +30,6 @@ const CardGrid = ({ title, items, hoverDemo = false }: Props) => {
                         </div>
                     )}
                     <span className="gridItemName">{itemTitle}</span>
-                    {sub && <span className="gridItemSub">{sub}</span> }
                    </Link>
                 ))}
             </div>

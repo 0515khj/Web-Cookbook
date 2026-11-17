@@ -225,6 +225,7 @@ export const GridWrap = styled.section`
     justify-content: center;
     height: 120px;
     margin-bottom: 8px;
+    padding: 90px 0;
     overflow: hidden;
     border-radius: 6px;
     background: var(--bg);      
