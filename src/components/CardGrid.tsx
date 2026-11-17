@@ -1,33 +1,37 @@
+import type { ComponentType } from "react";
 import { GridWrap } from "./style";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface CardData {
     id: string;
     title: string;
     sub?: string;
     path: string;
+    Demo?: ComponentType;
 }
 
 interface Props {
     title: string;
     items: CardData[];
+    hoverDemo?:boolean;
 }
 
-const CardGrid = ({ title, items }: Props) => {
-    const navigate = useNavigate();
+const CardGrid = ({ title, items, hoverDemo = false }: Props) => {
 
     return (
         <GridWrap className="cardGrid">
             <h2 className="gridTitle">{title}</h2>
             <div className="gridList">
-                {items.map((item) => (
-                    <button
-                        key={item.path}
-                        className="gridItem"
-                        onClick={() => navigate(item.path)}>
-                        <span className="gridItemName">{item.title}</span>
-                        {item.sub && <span className="gridItemSub">{item.sub}</span>}
-                    </button>
+                {items.map(({path, title: itemTitle, sub, Demo}) => (
+                   <Link key={path} to={path} className="gridItem">
+                    {Demo && (
+                        <div className={hoverDemo ? "gridItemDemo" : "gridItemDemo"} inert={!hoverDemo}>
+                            <Demo/>
+                        </div>
+                    )}
+                    <span className="gridItemName">{itemTitle}</span>
+                    {sub && <span className="gridItemSub">{sub}</span> }
+                   </Link>
                 ))}
             </div>
         </GridWrap>

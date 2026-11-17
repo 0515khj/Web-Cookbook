@@ -19,6 +19,7 @@ const JsPageIndex = () => {
             title: f.title,
             sub: g.name, // 어느 그룹 기능인지 작게 표시
             path: `/js/${g.id}/${f.id}`,
+            Demo: f.component,
           }))
         )}
       />
@@ -34,6 +35,7 @@ const JsPageIndex = () => {
           id: f.id,
           title: f.title,
           path: `/js/${group.id}/${f.id}`,
+          Demo: f.component,
         }))}
       />
     );

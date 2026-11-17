@@ -13,12 +13,14 @@ if (!group) {
   return (
     <CardGrid
       title="CSS"
+      hoverDemo
       items={cssGroups.flatMap((g) =>
         g.features.map((f) => ({
           id: f.id,
           title: f.title,
           sub: g.name,
           path: `/css/${g.id}/${f.id}`,
+          Demo: f.component,
         }))
       )}
     />
@@ -30,10 +32,12 @@ if (!feature) {
   return (
     <CardGrid
       title={`CSS / ${group.name}`}
+      hoverDemo
       items={group.features.map((f) => ({
         id: f.id,
         title: f.title,
         path: `/css/${group.id}/${f.id}`,
+        Demo: f.component,
       }))}
     />
   );

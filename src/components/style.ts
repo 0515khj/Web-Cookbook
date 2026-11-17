@@ -160,7 +160,7 @@ export const EditorTabsWrap = styled.div`
 
 /* StatusBar */
 export const StatusBarWrap = styled.footer`
-  height: 22px;
+  height: 30px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -168,7 +168,16 @@ export const StatusBarWrap = styled.footer`
   padding: 0 12px;
   background: var(--accent);
   color: var(--text-white);
-  font-size: 12px;
+  font-size: 13px;
+  .statusWrap {
+    display: flex;
+    align-items: center;
+    .statusRemote {
+      display: inline-block;
+      padding: 0 18px 0 6px;
+      font-size: 15px;
+    }
+  }
 `;
 
 /* CardGrid */
@@ -195,8 +204,10 @@ export const GridWrap = styled.section`
     display: flex;
     flex-direction: column;
     gap: 6px;
-    padding: 70px 20px;
+    padding: 16px;
     text-align: left;
+    text-decoration: none;
+    color: inherit;
     background: var(--sidebar);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -206,6 +217,20 @@ export const GridWrap = styled.section`
       transform: translateY(-4px);
       border-color: #fff;
     }
+  }
+
+  .gridItemDemo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--bg);      
+  }
+  .gridItemDemo.locked {
+    pointer-events: none;
   }
 
   .gridItemName {
